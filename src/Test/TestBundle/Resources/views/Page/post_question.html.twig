@@ -1,0 +1,116 @@
+
+  <link href="{{ asset('index_css_images/layout/styles/layout.css') }}"  rel="stylesheet" type="text/css" media="all"/>
+
+{% include '::header.html.twig' %}
+
+
+
+
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <p class="heading"> 
+      {% if app.session.get('sessionname')   %}  
+    
+			<font color = "green" >	* {{app.session.get('sessionname') }} </font>						
+     
+     {% else %}
+				<font color = "#E2494B" >!! Not login  Please Login </font>		
+     	{% endif %}</p>
+    <h2 class="heading uppercase bold font-x2">Please Ask the Question  </h2>
+    
+
+    
+    <p class="btmspace-50">
+		
+		Nam massa magna, aliquet non leo id, suscipit rutrum risus. Nulla tempor lectus purus, vitae facilisis orci maximus vitae. Suspendisse a fringilla leo. Etiam leo enim, semper sit amet aliquet non, consequat a nisl. Ut ut porta justo.</p>
+		
+						
+		
+    <div class="group products">
+		  <form  method ="post"  {{ form_enctype(form) }}  > 	
+			
+				{{ form_widget(form.user_id, {'attr': {'class': 'foo' ,'value': app.session.get('userId') } }) }}  
+			
+				
+				{{ form_widget(form.user_name, {'attr': {'class': 'foo' ,'value': app.session.get('sessionname') } }) }}  
+		
+				{{ form_widget(form.views, {'attr': {'class': 'foo' ,'value': '0'  }}) }} 
+			
+				
+			<div class="divide">		
+				<span class="label">		
+				{{ form_label(form.title, null, {'label': 'title About', 'label_attr': {'class': 'foo'}}) }}
+				</span> 
+					{{ form_widget(form.title, {'attr': {'class': 'foo' }}) }}  
+					
+			</div>
+				
+			<div class="divide">	
+			
+					
+				<span class="label">
+				
+					{{ form_label(form.tags, null, {'label': 'Your tags', 'label_attr': {'class': 'foo'  }}) }}
+					</span>
+
+					{{ form_widget(form.tags , {'attr': {'class': 'foo'}}) }}
+
+					
+				<!--		
+					<select id="Questions_tags" name="Questions[tags]" class="foo">
+						<option value="7">dsa</option>
+						<option value="8">java</option>
+						<option value="9">symfony</option>
+						<option value="12">javascript</option>
+					</select>-->
+					
+			</div>
+			
+			
+			
+				
+			<div class="divide">			
+				<span class="label">
+					{{ form_label(form.question, null, {'label': 'Your question', 'label_attr': {'class': 'foo'}}) }}
+					</span>
+					{{ form_widget(form.question, {'attr': {'class': 'foo'}}) }}  
+			</div>
+			
+			<div class="divide">			
+				<span class="label">
+					{{ form_label(form.description, null, {'label': 'Your description', 'label_attr': {'class': 'foo'}}) }}
+					</span>
+					{{ form_widget(form.description, {'attr': {'class': 'footextarea'}}) }}  
+			</div>
+		
+			
+		
+		
+			<div class="divide">			
+				{% if app.session.get('sessionname')   %} 
+				
+					{{ form_widget(form.submit) }}  
+					{% else %}
+					
+					<button id="notlogin_post" disabled >Please Login </button>  
+					
+				{% endif %}
+			</div>
+				
+		</form>
+		
+	
+   
+     
+    </div>
+    <div class="clear"></div>
+  </main>
+</div>
+
+
+
+
+{% include '::footer.html.twig' %}
+
+

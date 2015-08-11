@@ -1,0 +1,124 @@
+<body id="top">
+	
+<head>
+	<link href="{{ asset('index_css_images/layout/styles/layout.css') }}"  rel="stylesheet" type="text/css" media="all"/>
+
+<style>
+#pageintro {
+padding: 160px 0 80px;
+text-align: center;
+}
+</style>
+</head>
+
+
+
+{% include '::header.html.twig' %}
+
+
+
+
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <p class="heading">Phasellus vehicula porta</p>
+    <h2 class="heading uppercase bold font-x2">Morbi facilisis rhoncus</h2>
+    <p class="btmspace-50">Nam massa magna, aliquet non leo id, suscipit rutrum risus. Nulla tempor lectus purus, vitae facilisis orci maximus vitae. Suspendisse a fringilla leo. Etiam leo enim, semper sit amet aliquet non, consequat a nisl. Ut ut porta justo.</p>
+    <div class="group products">
+      <div class="one_third first"> 
+        <figure><img src=" {{ asset('index_css_images/images/demo/320x390.png') }}" alt="">
+          <figcaption class="bg-orange-trans">
+            <p class="heading font-x1 uppercase">Curabitur suscipit sed</p>
+            <p>Duis semper ultrices eros id pharetra. Morbi in bibendum eros phasellus.</p>
+            <footer><a class="btn bg-orange" href="#">Fusce vulputate</a></footer>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="one_third">
+        <figure><img src=" {{ asset('index_css_images/images/demo/320x390.png') }}" alt="">
+          <figcaption class="bg-black-trans">
+            <p class="heading font-x1 uppercase">Etiam convallis a felis</p>
+            <p>Duis semper ultrices eros id pharetra. Morbi in bibendum eros phasellus.</p>
+            <footer><a class="btn" href="#">Fusce vulputate</a></footer>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="one_third">
+        <figure><img src=" {{ asset('index_css_images/images/demo/320x390.png') }}" alt="">
+          <figcaption class="bg-red-trans">
+            <p class="heading font-x1 uppercase">Maecenas elementum ante</p>
+            <p>Duis semper ultrices eros id pharetra. Morbi in bibendum eros phasellus.</p>
+            <footer><a class="btn bg-red" href="#">Fusce vulputate</a></footer>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row100 bgded" style="background-image:url('images/demo/backgrounds/01.png');">
+  <div class="overlay">
+    <div class="container clear center"> 
+      <h2 class="uppercase">Sed hendrerit felis ante ut gravida sem bibendum non</h2>
+      <p class="btmspace-50">Vivamus mollis purus viverra felis sodales pharetra. Cras tincidunt erat urna, at rutrum risus congue a. Aliquam nec nisi et sapien venenatis venenatis at id orci.</p>
+      <p class="nospace"><a class="btn" href="#">Aenean sed erat a sapien vestibulum</a></p>
+    </div>
+  </div>
+</div>
+<div class="wrapper row2">
+  <div class="container clear center"> 
+    <h2 class="heading nospace uppercase">Donec luctus convallis rhoncus</h2>
+    <p class="nospace btmspace-30">Sed euismod augue eget nibh congue, eget placerat purus convallis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo magna.</p>
+    <ul class="nospace inline btmspace-50 pushright">
+      <li><a class="btn bg-orange" href="#">Suspendisse ligula</a></li>
+      <li><a class="btn bg-red" href="#">Etiam placerat magna</a></li>
+    </ul>
+    <ul class="nospace group">
+      <li class="one_quarter first"><i class="fa fa-3x fa-users"></i>
+        <p class="numb">12345</p>
+        <p>Maecenas libero nunc</p>
+      </li>
+      <li class="one_quarter"><i class="fa fa-3x fa-thumbs-o-up"></i>
+        <p class="numb">12345</p>
+        <p>Volutpat eu erat sed</p>
+      </li>
+      <li class="one_quarter"><i class="fa fa-3x fa-line-chart"></i>
+        <p class="numb">12345</p>
+        <p>Blandit elementum etiam.</p>
+      </li>
+      <li class="one_quarter"><i class="fa fa-3x fa-money"></i>
+        <p class="numb">12345</p>
+        <p>Scelerisque eros nulla</p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="wrapper row100 bgded" style="background-image:url({{ asset('index_css_images/images/demo/backgrounds/01.png') }});"> 
+  <div class="overlay">
+    <div id="newsletter" class="clear center"> 
+      <h2 class="uppercase font-x3 btmspace-50">Subscribe to our newsletter</h2>
+      <form class="inline clear" method="post" action="#">
+        <input type="text" value="" placeholder="Email Here">
+        <button class="btn" type="submit" title="Submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% include '::footer.html.twig' %}
+
+
+
+<!-- JAVASCRIPTS -->
+{{ asset('index_css_images/layout/styles/layout.css') }}
+
+<script src="{{ asset('index_css_images/layout/scripts/jquery.min.js') }}"></script>
+<script src="{{ asset('index_css_images/layout/scripts/jquery.flexslider-min.js') }}"></script>
+
+</body>
+
+
+
+
+

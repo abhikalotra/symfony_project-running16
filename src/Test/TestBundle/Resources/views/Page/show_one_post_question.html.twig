@@ -1,0 +1,220 @@
+ 
+
+  <link href="{{ asset('index_css_images/layout/styles/layout.css') }}"  rel="stylesheet" type="text/css" media="all"/>
+
+{% include '::header.html.twig' %}
+
+
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <p class="heading"> 
+      {% if app.session.get('sessionname')   %}  
+    
+			<font color = "green" >	* {{app.session.get('sessionname') }} </font>						
+     
+     {% else %}
+				<font color = "#E2494B" >!! Not login  Please Login </font>		
+     	{% endif %}</p>
+    <h2 class="heading uppercase bold font-x2">  Questions Description</h2>
+    
+		
+    <div class="group products">
+	   
+	   
+				<div class="question-summary" >
+					<div class="statscontainer">
+						<div class="statsarrow"></div>
+						<div class="stats">
+							<div class="vote">
+								<div class="votes">
+									<span class="vote-count-post "><strong>0</strong></span>
+									<div class="viewcount">votes</div>
+								</div>
+							</div>
+							<div class="status unanswered">
+								<strong>{{totalCount}}  </strong>answers
+							</div>
+						</div>
+						<div class="views " title="3 views">
+					3 views
+				</div>
+					</div>
+					<div class="summary">
+						<h3>{{show_one_post_data.question}} ?</h3>
+						<div class="title"> <strong>Title : </strong> {{show_one_post_data.title}}	</div>  
+						<div class="excerpt">{{ show_one_post_data.description }} 	</div>  
+						        
+						
+						
+						<div class="tags t-eclipse t-git t-import t-project">
+							<a href="{{ asset('app_dev.php/show_post_by_tags') }}/{{ show_one_post_data.tags }}" class="post-tag" title="" rel="tag">{{ show_one_post_data.tags }}</a> 
+						</div>
+						<div class="started fr">
+							<div class="user-info user-hover">
+					
+					<div class="user-gravatar32">
+						<a href="#">
+							<div class="gravatar-wrapper-32">
+								<img src="http://i.stack.imgur.com/c2Mq5.jpg?s=32&amp;g=1" alt="" width="32" height="32">
+								</div>
+						</a>
+					</div>
+						<div class="user-details">
+							<a href="#">{{ show_one_post_data.user_name }}</a><br>
+							<span class="reputation-score" title="reputation score " dir="ltr">4,048</span>
+						
+						</div>
+				</div>
+						</div>  
+					</div>
+				</div>
+						
+					<!--   Display Answer start 	--->
+					
+					<div class= "color">
+					<h1 class="answeris"><font color = "#A7C353" >Answers </font>			</h1>
+					</div>
+					
+					{% for item in show_answer_data  %}
+						<div class="question-summary1" >
+											
+								<div class="started1 fr1">
+							<div class="user-info1 user-hover1">
+					
+					<div class="user-gravatar321">
+						<a href="#">
+							<div class="gravatar-wrapper-321">
+								<img src="http://i.stack.imgur.com/c2Mq5.jpg?s=32&amp;g=1" alt="" width="32" height="32">
+								</div>
+						</a>
+					</div>
+						<div class="user-details1">
+							<a href="#">{{ item.user_name }}</a><br>
+							<span class="reputation-score1" title="reputation score " dir="ltr">4,048</span>
+							<span title="1 gold badge"><span class="badge11"></span>
+						</div>
+				</div>
+						</div>  	
+					<div class="summary1">
+						<h3>{{show_one_post_data.question}} ?</h3>						
+						<div class="excerpt1">Answers: {{ item.answer }} 	</div>  
+						    <div class="Comments"> <strong>Comments : </strong> {{item.comments}}	</div>     
+						
+							<div class="statscontainer1">
+						<div class="statsarrow1"></div>
+						<div class="stats1">
+							
+							<div class="status1 unanswered1">
+								<strong>{{totalCount}} </strong>  answers
+							</div>
+						</div>
+						
+					</div>
+						
+				
+					</div>
+				</div>
+				
+					{% endfor %}
+					<!--   Display Answer end 	--->
+					
+					
+				
+				
+				
+				
+				
+				
+				
+				
+					
+					
+					<!--   Post Your Answer   end 	--->
+
+					
+		  <div class="post_answer">		
+			
+			<h1 class="postanswer"><font color = "#E2494B" >Post Your Answer </font>			</h1>
+			
+			<form  method ="post"  {{ form_enctype(form) }}  > 	
+							
+				{{ form_widget(form.user_id, {'attr': {'class': 'foo' ,'value': app.session.get('userId') } }) }}  
+			
+				{{ form_widget(form.question_id, {'attr': {'class': 'foo' ,'value': show_one_post_data.id } }) }}  
+				
+				{{ form_widget(form.user_name, {'attr': {'class': 'foo' ,'value': app.session.get('sessionname') } }) }}   
+				
+				
+				
+				<div class="divide">		
+				
+				{{ form_label(form.title, null, {'label': 'Title About', 'label_attr': {'class': 'ans'}}) }}
+				
+				{{ form_widget(form.title, {'attr': {'class': 'ans'}}) }}  
+				</div>
+				
+				<div class="divide">		
+					
+				{{ form_label(form.answer, null, {'label': 'Answer', 'label_attr': {'class': 'ans'}}) }}
+				
+				{{ form_widget(form.answer, {'attr': {'class': 'ansc'}}) }}  
+				</div>
+				
+				<div class="divide">		
+					
+				{{ form_label(form.comments, null, {'label': 'Comments', 'label_attr': {'class': 'ans'}}) }}
+				
+				{{ form_widget(form.comments, {'attr': {'class': 'ansc'}}) }}  
+				</div>
+
+
+
+			
+				<div class="divide">			
+				{% if app.session.get('sessionname')   %} 
+				
+					{{ form_widget(form.submit) }}  
+					{% else %}
+					
+					<button id="notlogin_post_answer" disabled >Please Login </button>  
+					
+				{% endif %}
+			</div>
+
+				</form>	
+			</div>
+						
+							<!--    Post Your Answer  end 	--->
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+
+   
+     
+    </div>
+    <div class="clear"></div>
+  </main>
+</div>
+
+
+
+
+{% include '::footer.html.twig' %}
+
+
+
+
+
+
+
+
+

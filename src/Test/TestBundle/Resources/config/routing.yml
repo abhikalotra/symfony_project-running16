@@ -1,0 +1,73 @@
+test_test_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: TestTestBundle:Default:index }
+
+test_test_index:
+    path:     /index
+    defaults: { _controller: TestTestBundle:Register:index }
+
+
+test_test_stripe:
+    path:     /stripe
+    defaults: { _controller: TestTestBundle:Register:stripe }
+
+
+test_test_second:
+    path:     /second
+    defaults: { _controller: TestTestBundle:Testsecond:second }
+    
+    
+test_test_registerform:
+    path:     /registerform
+    defaults: { _controller: TestTestBundle:Register:register }
+    requirements:  { _method:  get|post }
+    
+    
+test_test_showdata:
+    path:     /showdata
+    defaults: { _controller: TestTestBundle:Register:showdata }
+    requirements:  { _method:  get|post }
+    
+test_test_delete:
+    path:     /delete/{id}/
+    defaults: { _controller: TestTestBundle:Register:delete }
+    requirements:  { _method:  get|post }
+    
+test_test_update:
+    path:     /update/{id}/
+    defaults: { _controller: TestTestBundle:Register:update }
+    requirements:  { _method:  get|post }
+    
+test_test_login:
+    path:     /login
+    defaults: { _controller: TestTestBundle:Register:login }
+    requirements:  { _method:  get|post }
+    
+test_test_logout:
+    path:     /logout
+    defaults: { _controller: TestTestBundle:Register:logout }
+    requirements:  { _method:  get|post }
+    
+    
+test_test_post_question:
+    path:     /post_question
+    defaults: { _controller: TestTestBundle:Register:post_question }
+    requirements:  { _method:  get|post }
+    
+test_test_show_all_post_question:
+    path:     /show_all_post_question
+    defaults: { _controller: TestTestBundle:Register:show_all_post_question }
+    requirements:  { _method:  get|post }
+
+
+test_test_show_one_post_question:
+    path:     /show_one_post_question/{ids}
+    defaults: { _controller: TestTestBundle:Register:show_one_post_question }
+    requirements:  { _method:  get|post }
+    
+    
+
+test_test_show_post_by_tags:
+    path:     /show_post_by_tags/{tags}
+    defaults: { _controller: TestTestBundle:Register:show_post_by_tags }
+    requirements:  { _method:  get|post }

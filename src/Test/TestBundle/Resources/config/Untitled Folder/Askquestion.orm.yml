@@ -1,0 +1,25 @@
+Test\TestBundle\Entity\Askquestion:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        userId:
+            type: integer
+            column: user_id
+        title:
+            type: string
+            length: '255'
+        tags:
+            type: string
+            length: '255'
+        question:
+            type: string
+            length: '255'
+        datetime:
+            type: datetime
+    lifecycleCallbacks: {  }

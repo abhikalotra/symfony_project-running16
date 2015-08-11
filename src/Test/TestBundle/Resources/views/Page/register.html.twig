@@ -1,0 +1,108 @@
+
+  <link href="{{ asset('index_css_images/layout/styles/layout.css') }}"  rel="stylesheet" type="text/css" media="all"/>
+
+{% include '::header.html.twig' %}
+
+
+
+
+
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+<!--
+    <p class="heading"> 
+      {% if app.session.get('sessionname')   %}  
+    
+			<font color = "green" >	* {{app.session.get('sessionname') }} </font>						
+     
+     {% else %}
+				<font color = "#E2494B" >!! Not login  Please Login </font>		
+     	{% endif %}</p>
+-->
+    <h2 class="heading uppercase bold font-x2">Welcome! To Registration Page </h2>
+    
+
+    
+    <p class="btmspace-50">
+		
+		Nam massa magna, aliquet non leo id, suscipit rutrum risus. Nulla tempor lectus purus, vitae facilisis orci maximus vitae. Suspendisse a fringilla leo. Etiam leo enim, semper sit amet aliquet non, consequat a nisl. Ut ut porta justo.</p>
+		
+		
+    <div class="group products">
+		<form  method ="post"  {{ form_enctype(form) }}  > 	
+			<div class="divide">
+				<span class="label">
+					{{ form_label(form.name, null, {'label': 'Your name', 'label_attr': {'class': 'foo'}}) }}
+					 </span>
+				{{ form_widget(form.name, {'attr': {'class': 'foo'}}) }}  
+			</div>
+				
+			<div class="divide">		
+				<span class="label">		
+				{{ form_label(form.description, null, {'label': 'Your description', 'label_attr': {'class': 'foo'}}) }}
+				</span>
+					{{ form_widget(form.description, {'attr': {'class': 'foo'}}) }}  
+					
+			</div>
+				
+			<div class="divide">			
+				<span class="label">
+					{{ form_label(form.username, null, {'label': 'Your username', 'label_attr': {'class': 'foo'}}) }}
+					</span>
+					{{ form_widget(form.username, {'attr': {'class': 'foo'}}) }}
+			</div>
+			
+			
+			
+				
+			<div class="divide">			
+				<span class="label">
+					{{ form_label(form.last, null, {'label': 'Your lastname', 'label_attr': {'class': 'foo'}}) }}
+					</span>
+					{{ form_widget(form.last, {'attr': {'class': 'foo'}}) }}  
+			</div>
+			
+			
+				
+			<div class="divide">			
+				<span class="label">
+					{{ form_label(form.password, null, {'label': 'Your Password ', 'label_attr': {'class': 'foo'}}) }}
+					</span>
+					{{ form_widget(form.password, {'attr': {'class': 'foo'}}) }}  
+			</div>
+			
+				
+			<div class="divide">			
+				<span class="label">
+					{{ form_label(form.email, null, {'label': 'Your Email', 'label_attr': {'class': 'foo'}}) }}
+					</span>
+					{{ form_widget(form.email, {'attr': {'class': 'foo'}}) }}  
+			</div>
+			
+		
+				
+				
+		
+			
+			<div class="divide">			
+				
+					{{ form_widget(form.submit)   }}  
+			</div>
+				
+		</form>
+		
+	
+   
+     
+    </div>
+    <div class="clear"></div>
+  </main>
+</div>
+
+
+
+
+{% include '::footer.html.twig' %}
+
+

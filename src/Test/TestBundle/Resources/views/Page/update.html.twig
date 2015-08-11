@@ -1,0 +1,109 @@
+{# src/Test/TestBundle/Resources/views/Page/showdata.html.twig #}
+
+
+
+	<link href="http://localhost/symfony_project/web/bundles/framework/css/structure.css" rel="stylesheet" />
+	<link href="http://localhost/symfony_project/web/bundles/framework/css/body.css" rel="stylesheet" />
+	<link rel="icon" sizes="16x16" href="/symfony_project/web/favicon.ico" />
+	<link rel="stylesheet" href="/symfony_project/web/bundles/acmedemo/css/demo.css" />
+
+
+ <div id="content">
+            <div class="header clear-fix">
+                <div class="header-logo">
+                    	<img src="{{ asset('bundles/acmedemo/images/logo.gif') }}" alt="Symfony!" />  	
+                </div>               
+            </div>
+
+            <div class="sf-reset">
+                    
+    
+    <div class="block">
+            
+    <h1 class="title">Update data Result </h1>				
+							
+   			<div class="symfony-blocks-welcome">
+				 <div class="illustration">
+						<img src="{{ asset('bundles/acmedemo/images/welcome-quick-tour.gif') }}" alt="Quick tour" />
+					</div>
+					
+					
+					
+<div class="structure">	
+		
+		<form  method ="post"  {{ form_enctype(form) }}  > 	
+			<div class="divide">
+				<span class="label">
+					{{ form_label(form.name, null, {'label': 'Your name', 'label_attr': {'class': 'foo'}}) }}
+					 </span>
+				{{ form_widget(form.name, {'attr': {'class': 'foo'}}) }}  
+			</div>
+				
+			<div class="divide">		
+				<span class="label">		
+				{{ form_label(form.description, null, {'label': 'Your description', 'label_attr': {'class': 'foo'}}) }}
+				</span>
+					{{ form_widget(form.description, {'attr': {'class': 'foo'}}) }}  
+					
+			</div>
+				
+			<div class="divide">			
+				<span class="label">
+					{{ form_label(form.username, null, {'label': 'Your username', 'label_attr': {'class': 'foo'}}) }}
+					</span>
+					{{ form_widget(form.username, {'attr': {'class': 'foo'}}) }}  
+			</div>
+				
+			<div class="divide">			
+				<span class="label">
+					{{ form_label(form.last, null, {'label': 'Your last', 'label_attr': {'class': 'foo'}}) }}
+					</span>
+					{{ form_widget(form.last, {'attr': {'class': 'foo'}}) }}  
+			</div>
+			
+			<div class="divide">			
+				
+					{{ form_widget(form.submit) }}  
+			</div>
+				
+		</form>
+ </div>	
+			
+
+			</div>
+		</div>
+
+     </div>
+ </div>
+    
+
+  
+<style>
+		
+	.structure {
+width: 316px !important;
+
+background: -moz-linear-gradient(top,  rgba(147,146,148,0.65) 0%, rgba(147,146,148,0.68) 1%, rgba(147,146,148,0.79) 5%, rgba(147,146,148,0.96) 11%, rgba(147,146,148,0.65) 27%, rgba(147,146,148,0.65) 36%, rgba(147,146,148,0.96) 45%, rgba(147,146,148,0.96) 55%, rgba(147,146,148,0.96) 58%, rgba(147,146,148,0.96) 62%, rgba(147,146,148,0.18) 88%, rgba(74,73,74,0) 94%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(147,146,148,0.65)), color-stop(1%,rgba(147,146,148,0.68)), color-stop(5%,rgba(147,146,148,0.79)), color-stop(11%,rgba(147,146,148,0.96)), color-stop(27%,rgba(147,146,148,0.65)), color-stop(36%,rgba(147,146,148,0.65)), color-stop(45%,rgba(147,146,148,0.96)), color-stop(55%,rgba(147,146,148,0.96)), color-stop(58%,rgba(147,146,148,0.96)), color-stop(62%,rgba(147,146,148,0.96)), color-stop(88%,rgba(147,146,148,0.18)), color-stop(94%,rgba(74,73,74,0)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(147,146,148,0.65) 0%,rgba(147,146,148,0.68) 1%,rgba(147,146,148,0.79) 5%,rgba(147,146,148,0.96) 11%,rgba(147,146,148,0.65) 27%,rgba(147,146,148,0.65) 36%,rgba(147,146,148,0.96) 45%,rgba(147,146,148,0.96) 55%,rgba(147,146,148,0.96) 58%,rgba(147,146,148,0.96) 62%,rgba(147,146,148,0.18) 88%,rgba(74,73,74,0) 94%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(147,146,148,0.65) 0%,rgba(147,146,148,0.68) 1%,rgba(147,146,148,0.79) 5%,rgba(147,146,148,0.96) 11%,rgba(147,146,148,0.65) 27%,rgba(147,146,148,0.65) 36%,rgba(147,146,148,0.96) 45%,rgba(147,146,148,0.96) 55%,rgba(147,146,148,0.96) 58%,rgba(147,146,148,0.96) 62%,rgba(147,146,148,0.18) 88%,rgba(74,73,74,0) 94%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(147,146,148,0.65) 0%,rgba(147,146,148,0.68) 1%,rgba(147,146,148,0.79) 5%,rgba(147,146,148,0.96) 11%,rgba(147,146,148,0.65) 27%,rgba(147,146,148,0.65) 36%,rgba(147,146,148,0.96) 45%,rgba(147,146,148,0.96) 55%,rgba(147,146,148,0.96) 58%,rgba(147,146,148,0.96) 62%,rgba(147,146,148,0.18) 88%,rgba(74,73,74,0) 94%,rgba(0,0,0,0) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(147,146,148,0.65) 0%,rgba(147,146,148,0.68) 1%,rgba(147,146,148,0.79) 5%,rgba(147,146,148,0.96) 11%,rgba(147,146,148,0.65) 27%,rgba(147,146,148,0.65) 36%,rgba(147,146,148,0.96) 45%,rgba(147,146,148,0.96) 55%,rgba(147,146,148,0.96) 58%,rgba(147,146,148,0.96) 62%,rgba(147,146,148,0.18) 88%,rgba(74,73,74,0) 94%,rgba(0,0,0,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6939294', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+
+
+}
+.divide {
+width: 100%;
+float: left;
+}
+span.label {
+width: 43%;
+float: left;
+margin: 5px 0px 21px 0px;
+}
+label.foo.required {
+width: 100%;
+}
+</style>

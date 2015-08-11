@@ -1,0 +1,16 @@
+admin_admin_homepage:
+    path:     admin/hello/{name}
+    defaults: { _controller: AdminAdminBundle:Default:index }
+    
+admin_admin_index:
+    path:     admin/index
+    defaults: { _controller: AdminAdminBundle:Admin:index }
+    
+admin_admin_panel:
+    path:     admin/panel
+    defaults: { _controller: AdminAdminBundle:Admin:panel }
+    
+admin_admin_tags:
+    path:     admin/tags
+    defaults: { _controller: AdminAdminBundle:Admin:tags }
+    requirements:  { _method:  get|post }

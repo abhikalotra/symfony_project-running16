@@ -1,0 +1,101 @@
+
+  <link href="{{ asset('index_css_images/layout/styles/layout.css') }}"  rel="stylesheet" type="text/css" media="all"/>
+
+{% include '::header.html.twig' %}
+
+
+
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <p class="heading"> 
+      {% if app.session.get('sessionname')   %}  
+    
+			<font color = "green" >	* {{app.session.get('sessionname') }} </font>						
+     
+     {% else %}
+				<font color = "#E2494B" >!! Not login  Please Login </font>		
+     	{% endif %}</p>
+    <h2 class="heading uppercase bold font-x2">Users Detail  </h2>
+    
+
+    
+    <p class="btmspace-50">
+		"" Welcome to User Details ""
+		Nam massa magna, aliquet non leo id, suscipit rutrum risus. Nulla tempor lectus purus, vitae facilisis orci maximus vitae. </p>
+		
+		
+    <div class="group products">
+		 
+		 <table class="tg">
+				<tr>
+					<th class="tg-s6z2" colspan="8">Results</th>
+				</tr>
+				<tr>
+					<td class="tg-vn4c">ID</td>
+					<td class="tg-vn4c">First Name</td>
+					<td class="tg-vn4c">Description</td>
+					<td class="tg-vn4c">Last Name</td>
+					<td class="tg-vn4c">Username</td>
+					<td class="tg-vn4c">Email</td>
+					<td class="tg-vn4c">Delete</td>
+					<td class="tg-vn4c">Update</td>
+				</tr>
+
+
+				{% for item in fetch_data  %}
+					<tr>					 
+						<td class="tg-031e">{{ item.id }}</td>
+						<td class="tg-ifyx">{{ item.name }}</td>
+						<td class="tg-0ord">{{ item.description }}</td>
+						<td class="tg-ifyx">{{ item.last }}</td>
+						<td class="tg-031e">{{ item.username }}</td>
+						<td class="tg-031e">{{ item.email }}</td>
+						<td class="tg-031e"><a href="{{ path('_welcome') }}delete/{{ item.id }} ">Delete</a></td>
+						<td class="tg-031e"><a href="{{ path('_welcome') }}update/{{ item.id }} ">Edit</a></td>
+						
+					</tr>
+				{% endfor %}
+				</table>	
+		 
+   
+     
+    </div>
+    <div class="clear"></div>
+  </main>
+</div>
+
+
+
+
+{% include '::footer.html.twig' %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+	<style type="text/css">
+		.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
+		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+		.tg .tg-0ord{text-align:right}
+		.tg .tg-ifyx{background-color:#D2E4FC;text-align:right}
+		.tg .tg-s6z2{text-align:center}
+		.tg .tg-vn4c{background-color:#D2E4FC}
+	</style>

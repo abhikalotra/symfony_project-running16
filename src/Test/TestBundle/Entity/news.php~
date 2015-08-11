@@ -1,0 +1,38 @@
+<?php
+namespace Test\TestBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+/**
+* @ORM\Entity
+* @ORM\Table(name="news")
+*/
+class news
+{
+/**
+* @ORM\Id
+* @ORM\Column(type="integer")
+* @ORM\GeneratedValue(strategy="AUTO")
+*/
+public $id;
+/**
+* @ORM\Column(type="string")
+*/
+public $firstname;
+/**
+* @ORM\Column(type="string")
+*/
+public $lastname;
+/**
+* @ORM\Column(type="string")
+*/
+public $email;
+/**
+* @ORM\Column(type="string")
+*/
+public $message;
+/**
+* @ORM\Column(type="integer")
+*/
+public $phone;
+
+
+}

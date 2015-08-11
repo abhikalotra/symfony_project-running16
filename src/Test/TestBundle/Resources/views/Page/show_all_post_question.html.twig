@@ -1,0 +1,98 @@
+
+
+  <link href="{{ asset('index_css_images/layout/styles/layout.css') }}"  rel="stylesheet" type="text/css" media="all"/>
+
+{% include '::header.html.twig' %}
+
+
+
+
+
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <p class="heading"> 
+      {% if app.session.get('sessionname')   %}  
+    
+			<font color = "green" >	* {{app.session.get('sessionname') }} </font>						
+     
+     {% else %}
+				<font color = "#E2494B" >!! Not login  Please Login </font>		
+     	{% endif %}</p>
+    <h2 class="heading uppercase bold font-x2"> All Questions </h2>
+    
+
+    <div class="group products">
+	   
+	 
+	    
+	     
+	     
+	     
+	     {% for fetch_data in fetch_show_all_post  %}
+			
+				<div class="question-summary" >
+					<div class="statscontainer">
+						<div class="statsarrow"></div>
+						<div class="stats">
+							<div class="vote">
+								<div class="votes">
+									<span class="vote-count-post "><strong>0</strong></span>
+									<div class="viewcount">votes</div>
+								</div>
+							</div>
+							<div class="status unanswered">
+
+									<strong>{{ fetch_data.count }}</strong> answers  
+
+							</div>
+						</div>
+						<div class="views " title="3 views">
+					3 views
+				</div>
+					</div>
+					<div class="summary">
+						<h3><a href="{{ asset('app_dev.php/show_one_post_question') }}/{{ fetch_data.id }}" class="question-hyperlink">{{ fetch_data.question }} ?</a></h3>
+						<div class="title"> <strong>Title : </strong> {{ fetch_data.title }} 	</div>  
+						<div class="excerpt">{{ fetch_data.description }} 	</div>  
+						        
+						
+						
+						<div class="tags t-eclipse t-git t-import t-project">
+							<a href="show_post_by_tags/{{ fetch_data.tags }}" class="post-tag" title="" rel="tag">{{ fetch_data.tags }}</a> 
+							
+						</div>
+						<div class="started fr">
+							<div class="user-info user-hover">
+					
+					<div class="user-gravatar32">
+						<a href="#">
+							<div class="gravatar-wrapper-32">
+								<img src="http://i.stack.imgur.com/c2Mq5.jpg?s=32&amp;g=1" alt="" width="32" height="32">
+								</div>
+						</a>
+					</div>
+						<div class="user-details">
+							<a href="#">{{ fetch_data.user_name }}</a><br>
+							<span class="reputation-score" title="reputation score " dir="ltr">4,048</span>
+					
+						</div>
+				</div>
+						</div>  
+					</div>
+				</div>
+						
+	{% endfor %}
+   
+     
+    </div>
+    <div class="clear"></div>
+  </main>
+</div>
+
+
+
+
+{% include '::footer.html.twig' %}
+
+
